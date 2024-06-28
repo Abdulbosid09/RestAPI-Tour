@@ -10,7 +10,7 @@ class TravelSerializer(serializers.Serializer):
     haqida = serializers.CharField()
     muddati = serializers.IntegerField()
     narxi = serializers.IntegerField()
-    mexmonxona = serializers.CharField()
+    mehmonxona = serializers.CharField()
     transport = serializers.CharField()
 
     def create(self, validated_data):
@@ -21,7 +21,7 @@ class TravelSerializer(serializers.Serializer):
         instance.haqida = validated_data.get('haqida', instance.haqida)
         instance.muddati = validated_data.get('muddati', instance.muddati)
         instance.narxi = validated_data.get('narxi', instance.narxi)
-        instance.mexmonxona = validated_data.get('mexmonxona', instance.mexmonxona)
+        instance.mehmonxona = validated_data.get('mexmonxona', instance.mexmonxona)
         instance.transport = validated_data.get('transport', instance.transport)
         instance.save()
         return instance
@@ -29,7 +29,7 @@ class TravelSerializer(serializers.Serializer):
 class MexmonxonaSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=100)
-    yulduzlar_soni = serializers.IntegerField()
+    yulduzlar = serializers.IntegerField()
     narxi = serializers.IntegerField()
 
     def create(self, validated_data):

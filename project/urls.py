@@ -21,6 +21,7 @@ from app.views import TravelDetailView, TransportView, MexmonxonaView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/travel/', TravelDetailView.as_view(), name='travel'),
     path('api/v1/travel/<int:pk>/', TravelDetailView.as_view(), name='travel'),
     path('api/v2/transport/<int:pk>/', TransportView.as_view(), name='transport'),
     path('api/v3/mexmonxona/<int:pk>/', MexmonxonaView.as_view(), name='mexmonxona'),
